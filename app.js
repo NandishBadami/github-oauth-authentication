@@ -49,7 +49,7 @@ app.set('view engine', 'ejs');
 app.use(partials());
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
-app.use(session({secret: 'codecademy', resave: false, saveUninitialized: false}))
+app.use(session({secret: 'codecademy', cookie: {maxAge: 1000 * 60 * 60 * 24 * 7, secure: false},resave: false, saveUninitialized: false}))
 app.use(passport.initialize());
 app.use(passport.session());
 
