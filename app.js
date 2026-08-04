@@ -28,7 +28,7 @@ const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 passport.use(new GithubStrategy({
   clientID: GITHUB_CLIENT_ID,
   clientSecret: GITHUB_CLIENT_SECRET,
-  callbackURL: 'https://github-oauth-authentication.vercel.app//auth/github/callback'
+  callbackURL: 'https://github-oauth-authentication.vercel.app/auth/github/callback'
 }, (accessToken, refreshToken, profile, done) => {
   return done(null, profile);
 })
